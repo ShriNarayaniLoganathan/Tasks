@@ -1,0 +1,25 @@
+<script>
+    function findSecondLargest(arr) {
+    let max = -Infinity;
+    let secondMax = -Infinity;
+
+    for (let num of arr) {
+        if (num > max) {
+            secondMax = max;
+            max = num;
+        } else if (num > secondMax && num !== max) {
+            secondMax = num;
+        }
+    }
+
+    if (secondMax === -Infinity) {
+        console.log("There is no second largest number.");
+    } else {
+        console.log("Second largest number is:", secondMax);
+    }
+}
+
+let numbers = [12, 45, 7, 89, 23];
+findSecondLargest(numbers);
+
+</script>
